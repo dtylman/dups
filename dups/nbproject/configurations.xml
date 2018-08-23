@@ -38,8 +38,11 @@
         <ccTool>
           <standard>11</standard>
           <incDir>
+            <pElem>../nanogui/ext/eigen</pElem>
             <pElem>../nanogui/include</pElem>
             <pElem>../poco/Foundation/include</pElem>
+            <pElem>../nanogui/ext/glfw/include</pElem>
+            <pElem>../nanogui/ext/nanovg/src</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
