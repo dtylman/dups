@@ -1,0 +1,6 @@
+[submodule "nanogui"]
+	path = nanogui
+	url = https://github.com/wjakob/nanogui.git
+[submodule "poco"]
+	path = poco
+	url = https://github.com/pocoproject/poco.git
