@@ -6,22 +6,14 @@
 CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
-# Debug configuration
-CND_PLATFORM_Debug=GNU-Linux
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=dups
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/dups
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=dups.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/dups.tar
-# Release configuration
-CND_PLATFORM_Release=GNU-Linux
-CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=dups
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/dups
-CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=dups.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/dups.tar
+# Default configuration
+CND_PLATFORM_Default=GNU-Linux
+CND_ARTIFACT_DIR_Default=GNU-Linux
+CND_ARTIFACT_NAME_Default=dups
+CND_ARTIFACT_PATH_Default=GNU-Linux/dups
+CND_PACKAGE_DIR_Default=dist/Default/GNU-Linux/package
+CND_PACKAGE_NAME_Default=dups.tar
+CND_PACKAGE_PATH_Default=dist/Default/GNU-Linux/package/dups.tar
 #
 # include compiler specific variables
 #

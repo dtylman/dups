@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
-    <logicalFolder name="HeaderFiles"
-                   displayName="Header Files"
-                   projectFiles="true">
-    </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
@@ -12,6 +8,12 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Dups.cpp</itemPath>
+      <itemPath>Dups.h</itemPath>
+      <itemPath>MainForm.cpp</itemPath>
+      <itemPath>MainForm.h</itemPath>
+      <itemPath>PathList.cpp</itemPath>
+      <itemPath>PathList.h</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -28,7 +30,7 @@
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="Debug" type="1">
+    <conf name="Default" type="1">
       <toolsSet>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
@@ -40,47 +42,49 @@
           <incDir>
             <pElem>../nanogui/ext/eigen</pElem>
             <pElem>../nanogui/include</pElem>
-            <pElem>../poco/Foundation/include</pElem>
             <pElem>../nanogui/ext/glfw/include</pElem>
             <pElem>../nanogui/ext/nanovg/src</pElem>
+            <pElem>../poco/Foundation/include</pElem>
+            <pElem>../poco/Util/include</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
+          <output>${CND_PLATFORM}/dups</output>
           <linkerAddLib>
             <pElem>../poco/lib/Linux/x86_64</pElem>
             <pElem>../nanogui</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>nanogui</linkerLibLibItem>
+            <linkerLibLibItem>X11</linkerLibLibItem>
+            <linkerLibLibItem>dl</linkerLibLibItem>
+            <linkerLibLibItem>GL</linkerLibLibItem>
+            <linkerLibLibItem>Xxf86vm</linkerLibLibItem>
+            <linkerLibLibItem>Xrandr</linkerLibLibItem>
+            <linkerLibLibItem>Xinerama</linkerLibLibItem>
+            <linkerLibLibItem>Xcursor</linkerLibLibItem>
+            <linkerLibLibItem>Xi</linkerLibLibItem>
+            <linkerLibLibItem>PocoUtil</linkerLibLibItem>
+            <linkerLibLibItem>PocoJSON</linkerLibLibItem>
+            <linkerLibLibItem>PocoXML</linkerLibLibItem>
+            <linkerLibLibItem>PocoEncodings</linkerLibLibItem>
             <linkerLibLibItem>PocoFoundation</linkerLibLibItem>
             <linkerLibStdlibItem>PosixThreads</linkerLibStdlibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Dups.cpp" ex="false" tool="1" flavor2="0">
       </item>
-    </conf>
-    <conf name="Release" type="1">
-      <toolsSet>
-        <compilerSet>default</compilerSet>
-        <dependencyChecking>true</dependencyChecking>
-        <rebuildPropChanged>false</rebuildPropChanged>
-      </toolsSet>
-      <compileType>
-        <cTool>
-          <developmentMode>5</developmentMode>
-        </cTool>
-        <ccTool>
-          <developmentMode>5</developmentMode>
-          <standard>11</standard>
-        </ccTool>
-        <fortranCompilerTool>
-          <developmentMode>5</developmentMode>
-        </fortranCompilerTool>
-        <asmTool>
-          <developmentMode>5</developmentMode>
-        </asmTool>
-      </compileType>
+      <item path="Dups.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MainForm.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MainForm.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PathList.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PathList.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
