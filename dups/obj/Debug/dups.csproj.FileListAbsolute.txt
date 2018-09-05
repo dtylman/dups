@@ -1,0 +1,10 @@
+/home/danny/src/dups/dups/bin/Debug/dups.exe
+/home/danny/src/dups/dups/bin/Debug/dups.pdb
+/home/danny/src/dups/dups/obj/Debug/dups.csprojResolveAssemblyReference.cache
+/home/danny/src/dups/dups/obj/Debug/dups.FormDups.resources
+/home/danny/src/dups/dups/obj/Debug/dups.FormHandler.resources
+/home/danny/src/dups/dups/obj/Debug/dups.Properties.Resources.resources
+/home/danny/src/dups/dups/obj/Debug/dups.csproj.GenerateResource.cache
+/home/danny/src/dups/dups/obj/Debug/dups.csproj.CoreCompileInputs.cache
+/home/danny/src/dups/dups/obj/Debug/dups.exe
+/home/danny/src/dups/dups/obj/Debug/dups.pdb

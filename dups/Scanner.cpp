@@ -5,22 +5,23 @@
  * Created on August 28, 2018, 3:08 PM
  */
 
-#include "PathList.h"
+#include "Scanner.h"
 #include <Poco/DirectoryIterator.h>
 #include <Poco/DigestStream.h>
 #include <Poco/FileStream.h>
 #include <Poco/StreamCopier.h>
+#include <unordered_set>
 
-PathList::PathList(const std::string& root) : _root(root), _logger(Poco::Logger::get("PathList"))
+Scanner::Scanner(const std::string& root) : _root(root), _logger(Poco::Logger::get("PathList"))
 {
 
 }
 
-PathList::~PathList()
+Scanner::~Scanner()
 {
 }
 
-void PathList::scan()
+void Scanner::scan()
 {
     _total = 0;
     scanDir(_root);
@@ -33,9 +34,10 @@ void PathList::scan()
             handleDuplicates(iter->second);
         }
     }
+    process();
 }
 
-void PathList::scanDir(const std::string& dir)
+void Scanner::scanDir(const std::string& dir)
 {
     try {
         Poco::DirectoryIterator iter(dir);
@@ -56,7 +58,7 @@ void PathList::scanDir(const std::string& dir)
     }
 }
 
-void PathList::deepCompare(const Items& items)
+void Scanner::deepCompare(const Handler::Items& items)
 {
     if (items.size() < 2) {
         return; // ignore lists with only one item
@@ -87,7 +89,7 @@ void PathList::deepCompare(const Items& items)
 
 }
 
-void PathList::deepCompare(const std::string& fileA, const std::string& fileB)
+void Scanner::deepCompare(const std::string& fileA, const std::string& fileB)
 {
     try {
         Poco::FileInputStream ais(fileA);
@@ -108,20 +110,47 @@ void PathList::deepCompare(const std::string& fileA, const std::string& fileB)
     catch (const Poco::Exception& ex) {
         _logger.error(ex.displayText());
     }
-
 }
 
-void PathList::handleDuplicates(const Items& duplicates)
+void Scanner::handleDuplicates(const Handler::Items& duplicates)
 {
-    for (auto iter = duplicates.begin(); iter != duplicates.end(); ++iter) {
-        _logger.information(Poco::format("'%s' is a duplicant!", *iter));
+    for (auto handler = _handlers.begin();handler!=_handlers.end();++handler){
+        try{
+            handler->get()->handleDuplicates(duplicates);
+        }
+        catch(const Poco::Exception& ex){
+            _logger.error(ex.displayText());
+        }
+        catch (const std::exception& ex){
+            _logger.error(ex.what());
+        }
     }
 }
 
-void PathList::handleDuplicates(const std::string& fileA, const std::string& fileB)
+void Scanner::handleDuplicates(const std::string& fileA, const std::string& fileB)
 {
-    Items items;
+    Handler::Items items;
     items.push_back(fileA);
     items.push_back(fileB);
     handleDuplicates(items);
+}
+
+void Scanner::addHandler(Handler* handler)
+{
+    _handlers.push_back(std::unique_ptr<Handler>(handler));
+}
+
+void Scanner::process()
+{
+     for (auto handler = _handlers.begin();handler!=_handlers.end();++handler){
+        try{
+            handler->get()->process();
+        }
+        catch(const Poco::Exception& ex){
+            _logger.error(ex.displayText());
+        }
+        catch (const std::exception& ex){
+            _logger.error(ex.what());
+        }
+    }
 }

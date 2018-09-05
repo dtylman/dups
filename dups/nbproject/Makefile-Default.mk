@@ -35,10 +35,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/Dups.o \
+	${OBJECTDIR}/App.o \
+	${OBJECTDIR}/BasicHandler.o \
 	${OBJECTDIR}/MainForm.o \
-	${OBJECTDIR}/PathList.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/Scanner.o \
+	${OBJECTDIR}/StatsHandler.o
 
 
 # C Compiler Flags
@@ -65,25 +66,30 @@ ${CND_PLATFORM}/dups: ${OBJECTFILES}
 	${MKDIR} -p ${CND_PLATFORM}
 	${LINK.cc} -o ${CND_PLATFORM}/dups ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Dups.o: Dups.cpp
+${OBJECTDIR}/App.o: App.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../nanogui/ext/eigen -I../nanogui/include -I../nanogui/ext/glfw/include -I../nanogui/ext/nanovg/src -I../poco/Foundation/include -I../poco/Util/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Dups.o Dups.cpp
+	$(COMPILE.cc) -g -I../nanogui/ext/eigen -I../nanogui/include -I../nanogui/ext/glfw/include -I../nanogui/ext/nanovg/src -I../poco/Foundation/include -I../poco/Util/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/App.o App.cpp
+
+${OBJECTDIR}/BasicHandler.o: BasicHandler.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../nanogui/ext/eigen -I../nanogui/include -I../nanogui/ext/glfw/include -I../nanogui/ext/nanovg/src -I../poco/Foundation/include -I../poco/Util/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/BasicHandler.o BasicHandler.cpp
 
 ${OBJECTDIR}/MainForm.o: MainForm.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I../nanogui/ext/eigen -I../nanogui/include -I../nanogui/ext/glfw/include -I../nanogui/ext/nanovg/src -I../poco/Foundation/include -I../poco/Util/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MainForm.o MainForm.cpp
 
-${OBJECTDIR}/PathList.o: PathList.cpp
+${OBJECTDIR}/Scanner.o: Scanner.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../nanogui/ext/eigen -I../nanogui/include -I../nanogui/ext/glfw/include -I../nanogui/ext/nanovg/src -I../poco/Foundation/include -I../poco/Util/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PathList.o PathList.cpp
+	$(COMPILE.cc) -g -I../nanogui/ext/eigen -I../nanogui/include -I../nanogui/ext/glfw/include -I../nanogui/ext/nanovg/src -I../poco/Foundation/include -I../poco/Util/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Scanner.o Scanner.cpp
 
-${OBJECTDIR}/main.o: main.cpp
+${OBJECTDIR}/StatsHandler.o: StatsHandler.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../nanogui/ext/eigen -I../nanogui/include -I../nanogui/ext/glfw/include -I../nanogui/ext/nanovg/src -I../poco/Foundation/include -I../poco/Util/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I../nanogui/ext/eigen -I../nanogui/include -I../nanogui/ext/glfw/include -I../nanogui/ext/nanovg/src -I../poco/Foundation/include -I../poco/Util/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/StatsHandler.o StatsHandler.cpp
 
 # Subprojects
 .build-subprojects:

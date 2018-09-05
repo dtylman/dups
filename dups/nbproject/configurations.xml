@@ -8,13 +8,16 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>Dups.cpp</itemPath>
-      <itemPath>Dups.h</itemPath>
+      <itemPath>App.cpp</itemPath>
+      <itemPath>BasicHandler.cpp</itemPath>
+      <itemPath>BasicHandler.h</itemPath>
+      <itemPath>Handler.h</itemPath>
       <itemPath>MainForm.cpp</itemPath>
       <itemPath>MainForm.h</itemPath>
-      <itemPath>PathList.cpp</itemPath>
-      <itemPath>PathList.h</itemPath>
-      <itemPath>main.cpp</itemPath>
+      <itemPath>Scanner.cpp</itemPath>
+      <itemPath>Scanner.h</itemPath>
+      <itemPath>StatsHandler.cpp</itemPath>
+      <itemPath>StatsHandler.h</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -73,19 +76,25 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="Dups.cpp" ex="false" tool="1" flavor2="0">
+      <item path="App.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Dups.h" ex="false" tool="3" flavor2="0">
+      <item path="BasicHandler.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BasicHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Handler.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="MainForm.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="MainForm.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="PathList.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Scanner.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="PathList.h" ex="false" tool="3" flavor2="0">
+      <item path="Scanner.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="StatsHandler.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StatsHandler.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
